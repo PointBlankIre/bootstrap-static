@@ -1,0 +1,2473 @@
+/*!
+Theme Name: PB-Bootstrap-less
+Theme URI: http://www.pointblank.ie
+Author: Point Blank
+Author URI: http://www.pointblank.ie
+Description: The PB-Bootstrap theme for WordPress is a fully responsive theme that looks great on any device. Features include a front page template with its own widgets, an optional display font, styling for post formats on both index and single views, and an optional no-sidebar page template. Make it yours with a custom menu, header image, and background.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: twentytwelve
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+ 
+// Colors
+//----------------------------------------------------------
+
+  @black:                 #000;
+  @grayDarker:            #222;
+  @grayDark:              #333;
+  @gray:                  #555;
+  @grayLight:             #777;
+  @grayLighter:           #C2BFBF;
+  @grayLighter1:          #f2f2f2;
+
+  @white:                 #fff;
+
+  @mercury:               #e8e8e8;
+  @doveGray:              #616161;
+  /*Footer top menu*/
+  @tundora:               #4d4d4d;
+  /* Homepage text */
+
+
+
+  @wildSand:              #f6f6f6;
+  /*container background | */
+ 
+  @downy:                 #78C5D0;
+  @deepCerulean:          #008CA2;
+  @java:                  #20ABC0;
+  @blueLagoon:            #00737f;
+  /* Header menu hover and active states |  homepage bottom left panels background */
+ 
+  @jaggedIce:             #cce8ed; 
+  /* top side menu background | */
+  
+  @aquaSpring:            #f2fafb; 
+  /* top side menu search background | */
+
+  @aquamarineBlue:        #7ed0e0;
+  /*r*/
+  
+  @morningGlory:          #a4dddf; 
+  /* top side menu search text | */
+  
+  /*@bondiBlue:             #00a2aa; */
+  @bondiBlue:             #00a0a8; 
+  /* top side menu text | footer top menu text hover | */
+
+  @iceBerg:               #d9eff2;
+  /* footer background */
+
+  @pineGreen:             #006b78;
+  /* footer bottom menu text & copyright */
+
+  @niagara:               #079ca2;
+  /* homepage top right panel - housing count*/
+
+  @monteCarlo:            #80c7d4;
+
+  @asparagus:             #758a50;
+  /* homepage top left cluid housing text */
+
+  @shakeSpeare:           #49c4d6;
+  /* what we do sidebar*/
+
+  @gumLeaf:               #aecebf;
+  /*who we work with sidebar*/
+
+  @seanymph:              #72a492;
+  /*who we work with sidebar*/
+
+  @springWood:            #F7F6F0;
+  /*Sidebar page description highlight bgk*/
+
+  @pampas:                #f8f7f6;
+  /*Cluid tenants landing page bottom*/
+
+  @soltPan:               #F3F8F5;
+  /*Casestudies header*/
+
+  @froly:                 #f28a7b;
+  /* Local authorities sidebar highlights*/
+
+  @viking:                #50C4D5;
+  /*sidebar text*/
+
+  @cararra:               #f5f4f2;
+  /*sidebar background*/
+
+
+
+
+
+
+
+// Scaffolding
+
+@bodyBackground:          @grayLighter;
+
+// Navbar
+
+@logodesktop:             url("img/cluid-logo.png") no-repeat; 
+@logomobile:              url("img/cluid-logo-mobile.png") no-repeat; 
+
+
+// Homepage
+
+@arrow-white:             url("img/white-arrow.png"); 
+@arrow-white-short:       url("img/white-short-arrow.png");   
+@arrow-white-bold:        url("img/white-bold-arrow.png");
+@arrow-gray:              url("img/gray-arrow.png");   
+@arrow-blue:              url("img/blue-arrow.png");   
+@arrow-green:             url("img/green-arrow.png");
+
+
+//Cluid Tenants
+
+@arrow-lagoon-long:       url("img/lagoon-long-arrow-ct.png");   
+@arrow-bondi-long:        url("img/bondi-long-arrow-ct.png");   
+@arrow-white-down:        url("img/arrow_down_white.png") no-repeat;
+@arrow-gray-down:         url("img/arrow_down_gray.png") no-repeat;
+
+//Information
+
+@arrow-bondi:             url("img/bondi-arrow.png") no-repeat;
+
+//Local Authorities
+
+@arrow-lagoon:             url("img/lagoon-arrow.png") no-repeat;
+
+// Page
+
+@pageBackground:          url("img/page-background.jpg") repeat;
+@download:                url("img/download-icon.png") no-repeat;
+
+// Footer
+
+@BgkSocialIcons:          url("https://s3.amazonaws.com/pointblankltd/uploads/bootstrap/bgk-social-icons.png") no-repeat;
+
+// Links
+
+@linkColor:               @grayLight;
+@linkColorHover:          darken(@linkColor, 0%);
+
+
+// Fonts
+@nun-r:                   'nunitoregular';
+@nun-b:                   'nunitobold';
+@nun-l:                   'nunitolight';
+@mont-r:              'montserratregular';
+
+@import "css/bootstrap.min.css";
+body        { padding-top: 0; background:@bodyBackground;  background: @pageBackground; font-family: @nun-l; font-size: 15px; color: @grayLight;}
+.container {background-color: @white; padding-left: 20px; padding-right: 20px;}
+.row { margin-right: -10px; margin-left: -10px; }
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 { padding-right: 10px; padding-left: 10px; }
+// Text elements
+//----------------------------------------------------------
+
+p           { margin: 0 0 1.2em;letter-spacing: 0.02em;}
+p img.left  { float: left; margin: 1.5em 1.5em 1.5em 0; padding: 0; }
+p img.right { float: right; margin: 1.5em 0 1.5em 1.5em; }
+
+a:focus, 
+a:hover     {color: @linkColorHover;}
+a           {text-decoration: none; color:@linkColor;}
+
+h1, h2, h3, h4, h5, h6 {font-family: @mont-r; color: @blueLagoon;}
+
+b, strong { font-weight: bold; font-family: @nun-b; }
+
+// Images
+
+.alignleft {display: inline;float: left;margin-right: 1.625em;}
+.alignright {display: inline;float: right;margin-left: 1.625em;}
+
+
+// NavBar
+//----------------------------------------------------------
+.navbar {background-color: @white; /*border-bottom: 2px solid @grayLighter;*/ margin-bottom: 0px;
+      
+      .container {background-color: @white;}
+      //logo
+      .navbar-header {margin-top: 43px;
+        .navbar-brand {background: @logodesktop; /* width: 215px; height: 61px;*/ width: 200px; height: 57px; background-size: contain; padding:0;margin:5px 30px 5px 0px;} 
+      }
+      .nav>.active>a, .nav>.active>a:hover, .nav>li>a:focus, .nav>li>a:hover, .nav>.active>a:focus {}
+      .nav ul {list-style: none;}
+
+
+      
+      // Navbar button for toggling navbar items in responsive layouts
+      .navbar-toggle .icon-bar {display: block;width: 18px;height: 2px;background-color: @grayDarker;.border-radius(1px);.box-shadow(0 1px 0 rgba(0,0,0,.25));}
+      .navbar-toggle .icon-bar + .icon-bar {margin-top: 3px;}
+
+      hr.spacer {margin: 0px; padding: 0px;}
+      }
+
+      /* Top Side Menu */
+      #top-side { float: right; background-color: @jaggedIce; margin-right: -20px; /*margin-bottom: -2px;*/
+        
+        //Search form
+        form#searchform {background-color: @aquaSpring; margin: 7px 7px 3px;
+          input {border: none; width: 150px; padding: 8px 6px 3px 0px; background-color: @aquaSpring; color: @java; font-size: 12px;
+            &::-webkit-input-placeholder {
+               color: @morningGlory;
+            }
+
+            &:-moz-placeholder { /* Firefox 18- */
+               color: @morningGlory; 
+            }
+
+            &::-moz-placeholder {  /* Firefox 19+ */
+               color: @morningGlory; 
+            }
+
+            &:-ms-input-placeholder {  
+               color: @morningGlory;  
+            }
+          }
+          button {border: none; padding-left: 11px; padding-right: 16px; margin-top: -3px; color: @morningGlory; background-color: @aquaSpring; font-size: 12px;}
+        }
+        
+        //Menu
+        aside#nav_menu-2 {
+          ul#menu-top-side {margin-left: 0xp; margin-bottom: 0px; padding-left: 0px;
+            li {border-bottom: 2px solid @morningGlory;
+              &:last-of-type {border-bottom: 0px;}
+              a {color: @java; padding: 5px 0px 5px 25px; display: block; font-size: 12px;}
+            }
+          }
+        }
+
+      }
+
+      /* Main menu */
+      .navbar-collapse {float: left; padding-left: 30px;
+        ul#menu-main.nav {float: none; margin-top: 76px; padding-bottom: 0px;
+          > li:first-of-type > a {margin-left: 0px;}  
+          > li {
+            &:first-of-type > a {/*margin-left: 30px;*/}  
+             &#menu-item-218, &#menu-item-219 {display: none;}
+            &.active > a {color: @blueLagoon;}
+            > a {display: inline-block; background: @white; color: @java; font-size: 17px; font-family: @nun-l; padding: 10px 23px; text-shadow: 0px 0px 0.1px;
+              &:hover {color: @blueLagoon;}
+            }
+              .caret {/*margin-left: 6px;*/ display: none;}
+
+          }
+
+          .dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {background-color: transparent; color: @blueLagoon;}
+
+          .dropdown-menu {/*display: block;*/ background-color: @white; border: none; border-bottom: 3px solid @downy; box-shadow: none; 
+            > li {
+              &:first-of-type a {padding-top: 15px;}
+              &:last-of-type a {padding-bottom: 15px;}
+             > a {width: 100%; text-align: left; text-transform: capitalize; font-size: 16px; line-height: 16px; color: @java; padding: 8px 20px; text-shadow: 0px 0px 0.1px;
+              &:hover {box-shadow: none; color: @blueLagoon; background: none;
+                span {border-bottom: 1px solid @blueLagoon;}
+              }
+              span {border-bottom: 1px solid @java;}
+             }
+            }
+          }
+
+        }
+      }
+
+    // NavBar Dropdown 
+      .dropdown-submenu {position: relative;}
+      /*.dropdown:hover>.dropdown-menu {display: block;}*/
+      .dropdown-submenu>.dropdown-menu {top: 0;left: 100%;margin-top: -6px; margin-left: -1px; .border-radius(6px 0 6px 6px)}
+      .dropdown-submenu:hover>.dropdown-menu {display: block;}
+      .dropdown-submenu>a:after {
+          display: block;content: " ";float: right;width: 0;height: 0;border-color: transparent;border-style: solid;
+          border-width: 5px 0 5px 5px;border-left-color: #ccc;margin-top: 5px;margin-right: -10px;}
+      .dropdown-submenu:hover>a:after {border-left-color: #fff;}
+      .dropdown-submenu.pull-left {float: none;}
+      .dropdown-submenu.pull-left>.dropdown-menu {left: -100%;margin-left: 10px;.border-radius(6px 0 6px 6px);}
+
+// Lists
+//----------------------------------------------------------
+      aside.unstyled {ul {margin-left:0;list-style:none}}
+
+// Pages
+//----------------------------------------------------------
+      
+      .content {/*min-height: 550px;*/
+        h2 {font-family: @mont-r; color: @blueLagoon; font-size: 22px;
+          a {font-family: @mont-r; color: @blueLagoon; font-size: 22px}
+        }
+        a {text-decoration: underline;
+          &:hover {text-decoration: none;}
+        }
+      }
+
+      .doc-wrapper {overflow: hidden;
+      
+        span.download-icon { background: @download; display: block; width: 50px; height: 57px; float: right; margin-left: 30px; margin-bottom: 8px;}
+
+        .download-link {color: @bondiBlue; text-decoration: underline;
+          &:hover {text-decoration: none;}
+        }
+        
+        .doc-description {width: 80%;}
+      
+      }
+
+
+      .page-container {padding-bottom: 40px;
+        
+         .widget-title {color: #fff; background-color: @blueLagoon; padding: 19px 20px 9px 20px; font-size: 20px; margin-bottom: 0px;}
+
+         
+
+         .page-highlight {margin-top: 20px; margin-bottom: 20px;
+          .image-highlight {background-color: @springWood;}
+          .description-highlight {color: @bondiBlue; background-color: @springWood; padding: 20px; margin-top: 20px; font-family: @mont-r;}
+         }
+
+        
+      }
+      h1.page-title {font-size: 12px; color: @white; background-color: @niagara; margin: 0px -20px 20px; padding: 11px 22px;}
+      
+      h1.page-header {color: @white; background-color: @gumLeaf; padding: 9px 20px; margin-top: 20px; margin-bottom: 35px; font-size: 24px; line-height: 28px; font-family: @mont-r;}
+
+      h1.page-header-two {color: @blueLagoon; padding: 0px 20px 9px 0px; margin-top: 0px; margin-bottom: 5px; font-size: 24px; line-height: 28px; font-family: @mont-r;}
+
+      #breadcrumbs {font-size: 12px; color: @white; background-color: @niagara; margin: 0px -20px 20px; padding: 9px 22px;
+        span {font-size: 12px; font-family: @mont-r; color: @white;
+          a {font-size: 12px; font-family: @mont-r; color: @white;}
+        }
+        span.divider {background: @arrow-white-short no-repeat 0px 0px; display: inline-block; width: 35px; height: 9px; margin-left: 9px; margin-right: 7px;}
+      }
+
+
+      .widget {
+        a {color: @java;}
+
+        ul {margin-left: 0px; padding-left: 20px;}
+      } 
+
+      hr.spacer {border-color: @grayLighter; margin-top: 10px; margin-bottom: 15px;}
+      hr.bondi {border:1px solid @bondiBlue; border-bottom: 0px; margin-top: 0px; margin-bottom: 0px;}
+      hr.lagoon {border:1px solid @blueLagoon; border-bottom: 0px; margin-top: 0px; margin-bottom: 0px;}
+
+      nav.pagination {display: block; margin-top: 50px;
+        ul {list-style: none; margin-left: 0px; padding-left: 0px; text-align: center;
+          li {/*display: inline-block;*/ font-weight: bold;
+            &.prev a {color: @deepCerulean; /*padding-right: 5px;*/ font-size: 16px; text-decoration: none; float: left;}
+            &.next a {color: @deepCerulean; /*padding-left: 5px;*/ font-size: 16px; text-decoration: none; float: right;}
+          }
+        }
+      }
+
+      a.moretag {
+        span.gray-arrow {background: @arrow-gray no-repeat 0px 9px; display: block; width: 55px; height: 17px;}
+        &:hover {
+          span.gray-arrow {background: @arrow-bondi no-repeat 0px 9px; display: block; width: 55px; height: 17px;}
+        }
+      }
+
+      .wpcf7,#wpcf7-f971-p964-o1, #wpcf7-f1047-p26-o1, #wpcf7-f791-p1009-o1, #wpcf7-f1035-o1 { margin-top: 40px;
+        input, textarea,select {border: 1px solid @niagara; .border-radius(4px,4px,4px,4px); background-color: @grayLighter1; width: 60%; margin-top: 5px; padding: 5px; color: @bondiBlue; font-size: 17px;}
+        input {height: 40px;}
+        textarea {height: 160px;}
+        input[type=submit] {width: auto; padding: 0px 15px;}
+        p {font-size: 19px; color: @bondiBlue;}
+        .required {color: @froly; font-size: 12px;}
+      }
+
+      .testimonial-wrapper {
+        .testimonial {font-size: 18px; font-family: @mont-r; color: @bondiBlue;
+          & p:last-of-type {margin-bottom: 11px;}
+        }
+        .testimonial-name {font-size: 18px; font-family: @mont-r; color: @grayLight; padding-bottom: 20px; display: block;}
+      }
+
+      .content-bottom-link {margin-top: 10px; margin-bottom: 40px;
+        a {color: @bondiBlue; font-size: 17px; font-family: @mont-r;}
+      }
+
+// Sidebars
+//----------------------------------------------------------
+      
+      // Who we are
+      .submenu-list-wwa, .submenu-list-wwd, .submenu-list-la  {background: @cararra; padding: 20px 25px 28px; list-style: none;
+        ul {list-style: none; margin-left: 0px; padding-left: 0px;}
+        li {border-bottom: 1px solid @blueLagoon;
+          &:hover {border-bottom: 1px solid @viking;}
+          /*&:not(:last-of-type) {border-bottom: 1px solid @white;}*/
+          &:first-of-type {padding-top: 1px;
+            a {padding-top: 0px;}
+          }
+          &.current_page_item {border-bottom: 1px solid @viking;
+            a {color: @viking;}
+          }
+          a {color: @blueLagoon; font-size: 15px; font-family: @nun-l; padding: 10px 0px; padding: 9px 0px 2px; display: block;
+            &:hover {text-decoration: none; color: @viking;}
+          }
+        }
+      }
+
+      /*.submenu-list-wwd  {background: @shakeSpeare;
+        li.current_page_item {border-bottom: 1px solid @blueLagoon;;
+            a {color: @blueLagoon;}
+          }
+        li:hover {border-bottom: 1px solid @blueLagoon;
+          
+          a:hover {text-decoration: none; color: @blueLagoon;}
+        }
+      }
+
+      .content .submenu-list-la li a {text-decoration: none;} 
+      .submenu-list-la  {background: @bondiBlue;
+        li.current_page_item {border-bottom: 1px solid @blueLagoon;;
+            a {color: @blueLagoon;}
+          }
+        li:hover {border-bottom: 1px solid @blueLagoon;
+          
+          a:hover {text-decoration: none; color: @blueLagoon;}
+        }
+      }*/
+
+      
+
+      .submenu-list-wwww  {list-style: none; padding-bottom: 40px;
+        li {padding-right: 15px;
+
+          &:nth-of-type(1) {background-color: @blueLagoon;}
+          &:nth-of-type(2) {background-color: @bondiBlue;}
+          &:nth-of-type(3) {background-color: @aquamarineBlue;}
+          &:nth-of-type(4) {background-color: @gumLeaf;}
+          &:nth-of-type(5) {background-color: @seanymph;}
+          &:nth-of-type(6) {background-color: @bondiBlue;;}
+          &:nth-of-type(7) {background-color: @blueLagoon;}
+          
+          a {font-size: 21px; padding: 10px 15px; color: @white; display: block;}
+          
+          &:nth-of-type(1) a,
+          &:nth-of-type(2) a,
+          &:nth-of-type(3) a,
+          &:nth-of-type(4) a,
+          &:nth-of-type(5) a,
+          &:nth-of-type(6) a,
+          &:nth-of-type(7) a {background-image: @arrow-white; background-position: center right; background-repeat: no-repeat;
+            &:hover {background-image: @arrow-white-bold; text-decoration: none;}
+          }
+
+        }
+      }
+
+      aside.widget_text .textwidget {padding-left: 20px;}
+      aside.widget_text {background: @blueLagoon; padding-bottom: 0px; color: @white; padding-bottom: 20px;
+        a {color: @white;}
+      }
+
+      .page-container .widget_pbrecentposts {background-color: @cararra; padding-bottom: 15px;
+        /*h4 {font-size: 16px; padding-right: 20px; margin-top: 0px;}
+        p {padding-right: 20px;}
+        li {margin-bottom: 30px;}*/
+      }
+
+      .widget_pbrecentposts {
+        h4 {font-size: 16px; padding-right: 20px; margin-top: 0px;}
+        p {padding-right: 20px;}
+        li {margin-bottom: 30px;}
+      }
+
+      .page-container #pbrecentposts-3 {background-color: @blueLagoon; padding-bottom: 1px;
+        li p {color: @white;}
+        a {color: @white;}
+      }
+
+// Homepage
+//----------------------------------------------------------
+
+      .homepage-top {padding-top: 45px; padding-bottom: 25px;
+
+        /*.col-left-narrow {padding-right: 10px;}
+        .col-right-narrow {padding-left: 10px;}*/
+
+        // Panel Top Left - Carousel
+        #myCarousel {
+          .carousel-control{top: 27%; bottom: 50%;
+          &.left {font-size: 80px; padding-top: 76px; padding-bottom: 188px;}
+          &.right {font-size: 80px; padding-top: 76px; padding-bottom: 188px;}
+          }
+
+        }
+        // Visible (only ??) on tablet
+        #hp-our-people-tablet, #hp-advice-on-housing-tablet {color: @white; background-color: @blueLagoon; padding: 15px; margin-bottom: 25px; position: relative; height: 180px;
+          span {font-size: 24px; font-family: @nun-r;}
+          a {color: @white;
+            &:hover {color: @white;}
+          }
+          span.white-arrow {background: @arrow-white-short no-repeat 0px 8px; display: inline-block; width: 30px; height: 20px; float: right;}
+          p.caption {position: absolute; text-transform: uppercase; margin-bottom: 0px; left: 0px; bottom: 0px; width: 100%; padding: 10px 5px 10px 15px; font-size: 18px; background-color: @niagara;
+            span.white-arrow {background: @arrow-white-short no-repeat 0px 8px; display: inline-block; width: 30px; height: 20px; float: right;}
+            &:hover {background-color: @monteCarlo;
+               /*span.white-arrow {background: @arrow-white no-repeat 0px 7px; display: inline-block; width: 30px; height: 20px; float: right;}*/
+            }
+          }
+        }
+
+        
+        //Panel Top Right
+
+        #cluid-tenants {height: 312px; padding-left: 20px; padding-right: 20px;
+          a {color: @asparagus;
+            h2 {font-size: 37px; margin-top: 29px; margin-bottom: 6px; font-family: @mont-r;}
+            > p {font-size: 21px; padding-right: 34%;}
+            &:hover {text-decoration: none;
+              & > p {/*color: @tundora;*/
+                /*span.green-arrow {background: @arrow-green no-repeat 0px 8px; display: inline-block; width: 45px; height: 20px; float: right;}*/
+              }
+            }
+            span.green-arrow {background: @arrow-green no-repeat 0px 8px; display: inline-block; width: 45px; height: 20px; float: right;}
+          }
+        }
+
+        #hp-property-count {background-color: @niagara; color: @white; padding: 15px 25px; height: 303px; overflow: hidden;
+          .hp-slider {height: 280px;}
+          h2 {margin-top: 0px; font-size: 105px; font-family: @mont-r; color: @white;}
+          .hp-property-count-text {height:  108px; overflow: hidden; 
+            p {width: 70%; font-size: 20px;}
+          }
+         a {
+          p {
+            span.white-arrow-3 {background: @arrow-white no-repeat 0px 8px; display: inline-block; width: 55px; height: 20px; float: right; padding: 12px;}
+          }
+         }
+          
+        }
+
+        
+
+      }
+
+      .homepage-bottom {color: @tundora; padding-bottom: 60px; font-size: 15px;
+          a {color: @tundora;}
+        }
+
+        //Panel Bottom Left
+        
+        #hp-our-people, #hp-advice-on-housing {color: @white; background-color: @blueLagoon; padding: 15px; margin-bottom: 20px; position: relative; height: 182px;
+          > span {font-size: 24px; font-family: @nun-r; line-height: 28px; padding-top: 6px; display: block; font-family: @mont-r;}
+          a {color: @white;
+            &:hover {color: @white;}
+          }
+         /* span.white-arrow {background: @arrow-white-short no-repeat 0px 8px; display: inline-block; width: 30px; height: 20px; float: right;}*/
+          p.caption {position: absolute; text-transform: uppercase; margin-bottom: 0px; left: 0px; bottom: 0px; width: 100%; padding: 10px 5px 10px 15px; font-size: 18px; background-color: @niagara;
+            span.white-arrow {background: @arrow-white-short no-repeat 0px 8px; display: inline-block; width: 37px; height: 20px; float: right;}
+            &:hover {background-color: @monteCarlo;
+               /*span.white-arrow {background: @arrow-white-short no-repeat 0px 7px; display: inline-block; width: 30px; height: 20px; float: right;}*/
+            }
+          }
+        }
+
+        .hp-news {padding-left: 15px; padding-bottom: 10px; height: 384px; border-bottom: 2px solid @java;
+          .hp-news-inner {height: 280px; overflow: hidden; margin-bottom: 2px;}
+          h3.hp-news-header {color: @bondiBlue; margin-top: 0px; margin-bottom: 18px; font-size: 25px; font-family: @mont-r;}
+          h4 {margin: 2px 0px;
+            .hp-news-title {color: @bondiBlue; font-size: 20px;font-family: @nun-l; font-size: 22px; font-family: @mont-r;}
+          }
+          a {
+            p {margin: 0px; padding-top: 17px;}
+            &:hover {color: @tundora; text-decoration: none;}
+          }
+          .hp-news-date {display: block; color: @bondiBlue; font-size: 17px;}
+        }
+
+        .hp-case-studies {height: 384px; border-bottom: 2px solid @java;
+          h3 {color: @bondiBlue; margin-top: 16px; margin-bottom: 1px; font-family: @mont-r; font-size: 23px;}
+          .text-wrapper {height: 102px; overflow: hidden; margin-bottom: 17px;}
+        }
+
+        .hp-thriving-com {height: 384px; border-bottom: 2px solid @java;
+          h3 {color: @bondiBlue; margin-top: 16px; margin-bottom: 1px; font-family: @mont-r; font-size: 23px;}
+          .text-wrapper {height: 102px; overflow: hidden; margin-bottom: 17px;}
+        }
+
+        .hp-more {font-size: 19px; text-transform: uppercase;
+          &:hover {color: @bondiBlue; text-decoration: none;
+            p span.gray-arrow {background: @arrow-blue no-repeat 0px 8px; display: inline-block; width: 55px; height: 20px; float: right;}
+          }
+          p span.gray-arrow {background: @arrow-gray no-repeat 0px 8px; display: inline-block; width: 55px; height: 20px; float: right;}
+        }
+      /*}*/
+
+
+// Main Menu pages
+//----------------------------------------------------------
+
+    .main-menu-page-container {padding-bottom: 20px;
+       h3 {color: @java;}
+      }
+      .main-menu-page-content {font-size: 23px; color: @java; line-height: 30px; font-family: @nun-l;}
+      /*h1.page-title {font-size: 15px; color: @white; background-color: @niagara; margin: 0px 0px 20px; padding: 10px 20px;}*/
+      
+      
+      .page-image-video {margin-bottom: 20px; position: relative;
+        .main-menu-page-content {position: absolute; top: 0px; left: 55%; right: 0px; height: 510px; overflow: hidden; padding: 60px 30px; color: @white;}
+      }
+      .video-box {position: relative; padding-bottom: 55.8%; padding-left: 0; height: 0; margin-bottom: 0px; overflow: hidden;
+          iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+      }
+
+// Our Locations
+//----------------------------------------------------------
+    
+    .gm-style .gm-style-iw div p {font-family: montserratregular; color: @blueLagoon;}
+
+
+// Our Board
+//----------------------------------------------------------
+  
+    
+    .our-people-taxonomies {
+      .content {font-size: 23px; color: @blueLagoon; line-height: 30px; font-family: @nun-l;}
+    }
+    // listing people page
+    .people-list {padding-top: 50px; padding-bottom: 40px;
+      .people-list-wrapper {height:330px; overflow:hidden;}
+      .people-list-text {border-bottom: 1px @grayLighter solid; height:310px;}
+      h4 {font-size: 21px; color: @bondiBlue; margin-top: 0px;}
+      .linkedin {color: @bondiBlue; text-decoration: underline; font-size: 16px; font-family: @mont-r;
+        &:hover {text-decoration: none;}
+      }
+      hr.spacer {margin-top: 20px; margin-bottom: 30px;}
+    }
+
+// Our People
+//----------------------------------------------------------
+  
+   
+    
+    // listing people page
+      .people-list.our-people {
+        .people-list-wrapper {height:260px;}
+        .people-list-text {height:240px;}
+      }
+    
+
+// What we do / Regenerate
+//----------------------------------------------------------
+    
+    .regenerate {
+      #myCarousel {margin-bottom: 20px;
+        .carousel-caption {left: 2%; right: 65%; top: 3%; bottom: 65%; text-align: left; z-index: 100;  background-color: rgba(255,255,255,0.5); padding: 5px 9px 15px 15px; margin: 0px; text-shadow: 0 0px 0px rgba(0,0,0,0.6);
+          .carousel-caption-wrapper {margin: 13px; overflow: hidden; height: 90%;}
+          h4 {color: @doveGray;}
+          p {color: @doveGray; font-size: 18px;}
+        }
+         .carousel-control{top: 27%; bottom: 50%; z-index: 101;
+          &.left {padding-top: 35px; padding-bottom: 188px;width: 7%; font-size: 120px; color: #37acc0; text-align: center; text-shadow: 0 0px 0 rgba(0,0,0,0.6); opacity: 1; filter: alpha(opacity=10);}
+          &.right {padding-top: 35px; padding-bottom: 188px;width: 7%; font-size: 120px; color: #37acc0; text-align: center; text-shadow: 0 0px 0 rgba(0,0,0,0.6); opacity: 1; filter: alpha(opacity=10);}
+        }
+      }
+    }
+
+// What we do / Build
+//----------------------------------------------------------
+    
+    .build-cs-wrapper {margin-bottom: 30px;}
+
+    .build_case_study {/*border-top: 1px solid @bondiBlue;*/ /*border-bottom: 1px solid @bondiBlue;*/ padding-top: 35px; padding-bottom: 10px; height: 255px;
+      h3 {margin-top: 0px; line-height: 19px; margin-bottom: 5px;
+        a {color: @blueLagoon;}
+      }
+      .build-subtitle {color: @blueLagoon; font-size: 22px; display: block; margin-bottom: 10px; height: 31px;}
+      
+      .text-wrapper {height: 87px; overflow: hidden;}
+      img {margin-bottom: 25px;}
+      
+      .hp-more {margin-top: 10px; display: block; color: @blueLagoon;
+        &:hover {color: @bondiBlue; text-decoration: none;
+          p span.gray-arrow {background: @arrow-blue no-repeat 0px 8px; display: inline-block; width: 55px; height: 20px; float: right;}
+        }
+        p {margin-bottom: 0px;}
+        p span.gray-arrow {background: @arrow-lagoon no-repeat 0px 8px; display: inline-block; width: 55px; height: 20px; float: right;}
+      }
+
+     a.moretag span.gray-arrow {display: none;}
+
+
+    }
+
+// Case Studies
+//----------------------------------------------------------
+
+    
+    .case-studies {
+
+      #breadcrumbs {margin-bottom: 0px;}
+
+      .case-studies-header {background-color:  @soltPan; overflow: hidden; margin: 0px -10px 30px; padding-left: 10px; padding-right: 10px;
+        h2 {margin-top: 20px; margin-bottom: 20px; font-size: 24px; line-height: 28px;}
+      }
+      
+      .case-study-wrapper {overflow: hidden; padding-bottom: 5px; height: 200px;
+        hr {border-color: @blueLagoon; margin-top: 20px;}
+        .ct-text {/*height: 285px;*/}
+        a.moretag {
+          span.gray-arrow {display: block; float: none; margin-top: 15px;}
+        }
+      
+        h4 {margin-bottom: 3px; margin-top: 0px;}
+        .cs-title {color: @blueLagoon; font-weight: bold;}
+        .cs-subtitle {color: @blueLagoon; font-family: @mont-r; display: block; margin-bottom: 13px;}
+        img {margin: 0 auto;}
+
+        .hp-more p span.gray-arrow {float: none;}
+      }
+
+      hr.lagoon {margin-top: 20px; margin-bottom: 35px;}
+    }
+
+// Single Case Study
+//----------------------------------------------------------
+    .single-case-study {padding-bottom: 30px;
+
+      .page-header-two {margin-top: 20px; margin-bottom: 15px;}
+      .image-box {padding-bottom: 20px; position: relative;
+        .in-box-title {position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; margin: auto; width: 70%; height: 25%; overflow: hidden;
+          h1 {text-align: center; font-size: 65px; color: white; font-family: @mont-r; margin: 0px;}
+        }
+      }
+      .video-box {margin-bottom: 20px;}
+      .content {padding-right: 30px;
+        h2 {font-size: 18px; font-family: @mont-r; color: @grayLight;
+          &:first-of-type {margin-top: 0px;}
+        }
+      }
+      .cs-testimonial-wrapper {
+        .cs-testimonial {font-size: 18px; font-family: @mont-r; color: @bondiBlue;}
+        .cs-testimonial-name {font-size: 18px; font-family: @mont-r; color: @grayLight;}
+      }
+      .contact-team {margin-top: 10px; margin-bottom: 40px;
+        a {color: @bondiBlue; font-size: 18px; font-family: @mont-r;}
+      }
+      .gallery-box {padding-bottom: 20px;}
+    }
+
+
+// Annual Reports
+//----------------------------------------------------------
+  
+  .annual-reports {
+
+    #breadcrumbs {margin-bottom: 0px;}
+
+    .content {padding-right: 35px;}
+
+    .page-header-two {padding: 20px 20px 9px 0; margin-bottom: 20px;}
+
+    .doc-wrapper {}
+  
+    //Sidebar
+    aside#pbrecentposts-3 {
+     ul {margin-left: 0px; padding-left: 20px;}
+    }
+    
+    .widget-title {padding: 13px 20px 10px; margin-bottom: 20px;}
+  }
+
+// Local Authorities
+//----------------------------------------------------------
+  
+  .local-authorities {
+    h2:first-of-type {margin-bottom: 25px;}
+
+    .contact-team {margin-top: 10px; margin-bottom: 40px;
+      a {color: @bondiBlue; font-size: 17px; font-family: @mont-r;}
+    }
+
+    .page-highlight {margin-top: 20px; margin-bottom: 20px;
+      .image-highlight {background-color: @springWood;
+        img {margin: 0px auto;}
+      }
+      .description-highlight {color: @froly; background-color: @springWood; padding: 20px; margin-top: 0px; font-family: @mont-r; margin-top: -20px;}
+     }
+
+     .la-sidebar-top {color: @blueLagoon; font-family: @nun-r; font-size: 20px; margin-bottom: 20px;}
+
+     .la-case-studies {border-bottom: 1px solid @blueLagoon; height: 416px; overflow: hidden;
+      .text-wrapper {height: 108px; overflow: hidden; margin-bottom: 20px;}
+      h3 {font-size: 21px; margin-bottom: 20px;}
+      a {color: @blueLagoon;}
+     }
+
+     .la-our-team {border-bottom: 1px solid @blueLagoon; height: 416px; overflow: hidden;
+      .text-wrapper {height: 108px; overflow: hidden; margin-bottom: 20px;
+        h4 {margin-bottom: 15px;
+          &:first-of-type {margin-top: 1px;}
+        }
+      }
+      h3 {font-size: 21px; margin-bottom: 20px;}
+      a {color: @blueLagoon;}
+     }
+
+    .hp-more {
+      &:hover {color: @bondiBlue; text-decoration: none;
+        p span.gray-arrow {background: @arrow-blue no-repeat 0px 8px; display: inline-block; width: 55px; height: 20px; float: right;}
+      }
+      p span.gray-arrow {background: @arrow-lagoon no-repeat 0px 8px; display: inline-block; width: 55px; height: 20px; float: right;}
+    }
+
+    .submenu-list-la {padding-bottom: 59px;}
+  }
+
+
+// How to apply for housing
+//----------------------------------------------------------
+  
+  .housing {padding-top: 15px;
+    .content {min-height: 0px;}
+    .housing-left {border-top: 2px solid @aquamarineBlue; margin-top: 5px;
+      .housing-post-title {color: @aquamarineBlue; font-size: 24px;}
+    }
+    .content {}
+  }
+
+
+
+// Careers section
+//----------------------------------------------------------
+
+  // Great place to work
+  .great-place {
+    .gp-benefits {
+      ul {margin-left: 0px; padding-left: 20px;}
+    }
+
+    .video-box {margin-bottom: 23px;}
+
+    .gallery-box {
+      img {max-width: 100%; padding-bottom: 23px;}
+    }
+
+    
+  }
+
+  //Apply for job
+  /*.page-id-1220, .page-id-1030, .page-id-267 {
+    .submenu-list-wwa {
+      li.page-item-1220 { display: none;}    
+    }
+  }*/
+
+// Cluid Tenants Section
+//----------------------------------------------------------
+  
+  .container-fluid {
+   /* h1.page-title {margin: 0px; padding: 15px 20px; font-size: 17px;}*/
+    .breadcrumbs {margin: 0px; padding: 10px 20px; font-size: 17px; color: #fff; background-color: @niagara;}
+
+
+    #breadcrumbs {font-size: 12px; color: @white; background-color: @niagara; margin: 0px -20px 0px; padding: 0px 22px;
+        span {font-size: 12px; font-family: @mont-r; color: @white;
+          a {font-size: 12px; font-family: @mont-r; color: @white;}
+        }
+        span.divider {background: @arrow-white-short no-repeat 0px 0px; display: inline-block; width: 35px; height: 9px; margin-left: 9px; margin-right: 7px;}
+      }
+
+    .container.container-cluid {background-color: @niagara;
+      
+      .header-img { background-color: @white;
+        img {}
+      }
+    }
+  }
+
+  .cluid-tenants-menu {height: 38px; background-color: @niagara; font-family: @nun-r;
+
+    #menu-tenants-menu {width: 100%;
+            
+
+      > li { /*width: 220px;*/ /*text-align: center;*/
+        &:nth-of-type(1) {padding-right: 7%}
+        &:nth-of-type(2) {padding-right: 7%}
+        &:nth-of-type(3) {padding-right: 7%}
+        &:nth-of-type(4) {padding-right: 7%}
+        &.current-menu-item a {background-color: #fff; color: #333;}
+        &.dropdown {
+          > a {
+            span { background: @arrow-white-down right center; padding-right: 30px;}
+            &:hover {
+              span { background: @arrow-gray-down right center; padding-right: 30px;}
+            }
+          }
+        }
+        > a {color: @white; padding-left: 20px; padding-top: 9px; padding-bottom: 9px;
+          b.caret {display: none;}
+          &:hover {background-color: white; color: @grayDark;
+            
+          }
+        }
+        ul.dropdown-menu {/*display: block;*/ border: 0px;
+          > .active > a {color: @niagara; background-color: transparent;}
+          li {text-align: left;
+            &.current-menu-item {color: @niagara; background-color: transparent;}
+            a {
+              &:hover {color: @niagara; background-color: transparent;}
+            }
+          }
+        }
+      }
+    }
+
+  }
+  .cluid-tenants {padding-bottom: 30px;
+
+    
+
+    .content {
+      hr:last-of-type {}
+    }
+   
+    .tenants-header {color: @blueLagoon; padding: 10px 20px 9px 0px; margin-top: 20px; margin-bottom: 5px; font-size: 24px; line-height: 28px; font-family: @mont-r; margin-bottom: 20px;}
+   
+    .tenants-wrapper {
+      .tenants-title {margin-top: 0px;
+        a {color: @java; font-size: 21px; margin-top: 0px;}
+      }
+      p {font-size: 15px; /*line-height: 19px;*/}
+    }
+
+    .download-link {color: @bondiBlue; text-decoration: underline;
+      &:hover {text-decoration: none;}
+    }
+
+    //Cluid Tenants sidebar
+    aside {margin-top: 20px; border: 1px solid @gumLeaf;
+    .widget-title {color: @white; background-color: @gumLeaf; padding: 13px 20px 10px; font-size: 20px; margin-bottom: 20px; margin-top: 0px; line-height: 22px;}
+    ul {margin-left: 0px; padding-left: 20px;}
+    }
+
+  }
+
+// Cluid Tenants landing page
+//----------------------------------------------------------
+
+  .container-fluid {background-color: white;
+    .cluid-tenants-header {background-color: @white; position: relative; /*height: 297px;*/
+      .container {background-color: transparent;}
+      .header-img {background-color: transparent; position: absolute; top: 0px; bottom: 0px; right: 9%; margin-top: 50px; 
+        img {width: auto; max-height: 100%;}
+      }
+      .header-content {color: @doveGray; font-size: 27px; line-height: 33px; width: 60%; padding-top: 50px; padding-bottom: 55px;}
+    }
+  }
+
+  .ct-panels-top {color: @doveGray; margin-left: -20px; margin-right: -20px;
+
+    .col-md-3 {padding-right: 20px;}
+
+    .ct-order-repair, .ct-pay-rent, .ct-handbook, .ct-get-involved {margin-top: 30px; margin-bottom: 30px; padding-left: 10px; padding-right: 10px;}
+    .ct-order-repair, .ct-pay-rent, .ct-handbook {border-right: 1px solid @doveGray;}
+
+    .ct-panel-title {text-align: center; 
+      h3 {font-size: 22px; color: @doveGray; margin-top: 0px; margin-bottom: 23px;}
+    }
+    
+    .ct-panel-img {height: 185px; margin-bottom: 7px;
+      img {margin: 0 auto;}
+    }
+    
+    .ct-panel-text {height: 105px; overflow: hidden; margin-bottom: 20px;}
+    
+    .ct-panel-link {text-align: center; margin-bottom: -17px;
+      a {
+        p {border: 1px solid @blueLagoon; color: @blueLagoon; font-family: @nun-r; padding: 14px 20px; display: inline-block; font-size: 14px; text-transform: uppercase;}
+        &:hover {
+          p {border: 1px solid @bondiBlue; color: @bondiBlue;}
+        }
+      }
+    }
+  }
+
+  .ct-panels-bottom {background-color: @pampas; margin-left: -20px; margin-right: -20px; padding: 30px 10px;
+    .ct_thriving {
+      h3 {float: left; font-size: 22px;}
+    }
+    .ct_case_study {
+      h3 {float: left; font-size: 22px;}
+    }
+    
+    .ct-more {
+      h3 {width: 100%;
+        p {display: inline;}
+      }
+      &:hover {text-decoration: none;
+        h3 {color: @bondiBlue;}
+        p span.ct-arrow {background: @arrow-bondi-long no-repeat 0px 13px; display: inline-block; width: 55px; height: 22px; float: right;}
+      }
+      p span.ct-arrow {background: @arrow-lagoon-long no-repeat 0px 13px; display: inline-block; width: 55px; height: 22px; float: right;}
+    }
+
+    .ct_news {padding-left: 10px; padding-bottom: 10px;
+      .ct-news-inner {}
+      h3.ct-news-header {color: @bondiBlue; margin-top: 0px; margin-bottom: 18px; font-size: 25px; font-family: @mont-r;}
+      h4 {margin: 2px 0px;
+        .ct-news-title {color: @bondiBlue; font-size: 20px;font-family: @nun-l; font-size: 22px; font-family: @mont-r;}
+      }
+      a {
+        p {margin: 0px; padding-top: 17px;}
+        &:hover {color: @blueLagoon; text-decoration: none;}
+      }
+      .ct-news-date {display: block; color: @bondiBlue; font-size: 17px;}
+    }
+
+  }
+
+// Cluid Tenants - Tenants News
+//----------------------------------------------------------
+
+  .tenants-news {
+    h1.news-header {color: @white; background-color: @gumLeaf; padding: 10px 20px; margin-bottom: 35px; font-size: 24px; line-height: 28px; font-family: @mont-r; margin-left: -10px; padding-left: 20px;}
+
+    .news-wrapper {/*border-bottom: 1px solid @tundora;*/
+      .news-date {text-align: center;
+        span#news-day {display: block; font-size: 70px; line-height: 70px; color: @gumLeaf; font-family: @mont-r;}
+        span#news-month {display: block; font-size: 20px; color: @gumLeaf;}
+      }
+      .news-title {margin-top: 0px; 
+        a {color: @java; font-size: 21px; margin-top: 0px;}
+      }
+      p {/*font-size: 15px; line-height: 21px;*/}
+    }
+
+    aside {border: 0px;}
+
+    aside#archives-2 {
+      h3 {color: @white; background-color: @niagara; padding: 10px 20px; font-size: 24px; line-height: 28px; font-family: @mont-r; margin-bottom: 35px; margin-right: -10px;}
+      li {
+        a {color: @blueLagoon; font-size: 22px; margin-top: 0px;}
+      } 
+    }
+
+  }
+
+
+// Cluid Tenants - Newsletter
+//----------------------------------------------------------
+
+        .cluid-newsletter {
+          .content {padding-right: 35px;}
+        }
+
+// Cluid Tenants - Tenants Single News
+//----------------------------------------------------------
+
+        .single-news-wrapper { padding-left: 50px;
+          .single-news-title {margin-top: 0px; 
+            a {color: @java; font-size: 21px; margin-top: 0px;}
+          }
+          .single-news-date {display: block; margin-bottom: 10px;}
+          p {font-size: 19px; line-height: 25px;}
+
+        }
+
+// Cluid Tenants - Information
+//----------------------------------------------------------
+
+        .cluid-tenants.cluid-information {
+          .content {padding-right: 75px;}
+        }
+
+// Cluid Tenants - Order a Repair
+//----------------------------------------------------------
+      
+        .order-repair {
+          .content { padding-right: 35px;
+            .tenants-wrapper p {font-family: montserratregular; color: #00737f; font-size: 22px;}
+          }
+        }
+
+// Media Center
+//----------------------------------------------------------
+
+        .media-center {padding-bottom: 20px;
+
+          #breadcrumbs {margin-bottom: 0px;}
+
+          .indent20 {padding-left: 20px;}
+
+          h1.page-header-two { padding: 20px 20px 9px 0px; margin-bottom: 20px;}
+
+          .content {padding-right: 35px;}
+
+          .media-post-title {margin-top: 0px; 
+            a {color: @bondiBlue; margin-top: 0px; text-decoration: none; font-size: 16px;}
+          }
+
+          .doc-wrapper {
+            h4 {font-size: 16px;}
+          }
+          .download-link {color: @bondiBlue; text-decoration: underline;
+            &:hover {text-decoration: none;}
+          }
+          .media-post-date {display: block; margin-bottom: 0px;}
+
+          /*hr.spacer {margin-top: 30px; margin-bottom: 30px;}*/
+          p {/*font-size: 19px; line-height: 25px;*/ font-size: 15px; line-height: 19px;}
+
+
+          //sidebar
+
+          aside#nav_menu-5 {margin-top: 20px;
+            ul {margin-left: 0px; padding: 7px 0px; background: @cararra; padding: 20px;
+              li {border-bottom: 1px solid @blueLagoon;
+                &:hover {border-bottom: 1px solid @viking;}
+                &:first-of-type a {padding-top: 0px;}
+                a {display: block; font-size: 15px; color: @blueLagoon; padding: 9px 0px 2px; font-family: @nun-l;
+                  &:hover {text-decoration: none; color: @viking;}
+                }
+              }
+            }
+          }
+
+          aside {
+            .textwidget {padding-left: 20px;}
+          }
+
+          .widget-title {color: #fff; background-color: @blueLagoon; padding: 13px 20px 10px 20px; font-size: 20px; margin-bottom: 0px;}
+
+          aside#pbrecentposts-2 {
+             .widget-title {margin-bottom: 20px;}
+            ul {
+              li {
+                h4 a {color: @blueLagoon; font-size: 16px;}
+                span {padding-bottom: 5px; display: block;}
+              }
+            }
+          }
+          
+
+          aside#media-center-categories {
+            ul {margin-left: 0px; padding-left: 0px;
+              li {
+                ul {margin-left: 0px; padding-left: 20px;}
+                &:first-of-type a {padding-top: 0px;}
+                a {font-size: 21px; color: @white; padding: 5px 0px; display: block; font-size: 16px;}
+              }
+            }
+          }
+
+          .single-media-header {margin-top: 20px;}
+
+        }
+
+
+
+
+// Footer
+//----------------------------------------------------------
+        html footer {background-color: @iceBerg; padding-bottom: 20x;
+          
+          #footer-wrapper {padding-left: 20px; padding-right: 25px;}
+          .container {background-color: @iceBerg;}
+          
+          // Top menu
+          aside#nav_menu-3 {margin-top: 30px; margin-bottom: 17px;
+            .menu-footer-top-container {/*margin-left: -10px; margin-right: -10px;*/}
+            ul#menu-footer-top { margin-left: 0px; padding-left: 0px;
+              
+              display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+              display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+              display: -ms-flexbox;      /* TWEENER - IE 10 */
+              display: -webkit-flex;     /* NEW - Chrome */
+              display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+
+
+
+              -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+              
+              flex-wrap: wrap;
+
+              
+              -webkit-flex-direction: row;
+              flex-direction: row;
+              -webkit-flex-warp: wrap;
+              flex-wrap: wrap;
+              /*flex-flow: row wrap;
+              -webkit-flex-flow: row wrap;*/
+
+              -webkit-justify-content: space-between;
+              justify-content: space-between;
+
+               -webkit-align-content: space-between;
+              align-content: space-between;
+              
+
+
+             
+              li {width: 270px; padding-bottom: 10px;
+                a {background-color: @white; display: block; padding: 10px 20px; font-size: 17px; text-transform: uppercase; color: @doveGray; text-align: center; font-family: @nun-r;
+                  &:hover {color: @bondiBlue; text-decoration: none;}
+                }
+              }
+            }
+          }
+
+          // Bottom menu
+          .footer-bottom-menu-wrapper {float: right;}
+          aside#nav_menu-4 {float: right;
+            ul#menu-footer-bottom { margin-left: 0px; padding-left: 0px;
+              li {display: inline-block;
+                &:not(:first-of-type) a {padding-left: 20px;}
+                a {color: @blueLagoon; font-size: 12px; font-family: @nun-l;}
+              }
+            }
+          }
+
+          .copyright-wrappper {float: right;
+            #copyright {color: @blueLagoon; font-size: 12px; font-family: @nun-l; text-align: left;}
+          }
+
+            .icons {padding-top:10px;list-style: none;
+                  li a {padding:8px 0 12px 35px; margin-bottom:2px;}
+                  .facebook {
+                    a  {background: @BgkSocialIcons 0 -103px;
+                  &:hover  {background: @BgkSocialIcons 0 -244px;
+                    }}}
+                 .twitter {
+                    a  {background: @BgkSocialIcons 0 -67px;
+                  &:hover  {background: @BgkSocialIcons 0 -208px;
+                    }}}
+            } 
+        } // End footer
+
+    
+// Cookiewarning
+        #cookiewarning {
+          input {margin-left: 20px;}
+        }
+
+
+
+
+
+
+
+
+
+// Footer Menu for IE 9
+        html.lt-ie10 footer {
+          // Top menu
+          .menu-footer-top-container {margin-left: -10px; margin-right: -10px;}
+          aside#nav_menu-3 {margin-top: 30px; margin-bottom: 40px; width: 100%;
+            ul#menu-footer-top { margin-left: 0px; padding-left: 0px; overflow: hidden; width: 100%;
+              li { /*width: 275px;*/ width:25%; padding-bottom: 10px; float: left; /*padding: 10px 15px;*/ padding: 10px 1%;}
+            }
+          }
+        }  
+
+
+// Media Queries
+//----------------------------------------------------------
+
+// Desktops 
+@media (max-width: 1199px) {
+        
+        // Header   
+            .navbar {
+
+              //logo
+              .navbar-header {margin-top: 49px;
+                .navbar-brand {margin-top: 3px; width: 190px;} 
+              }
+              
+              /* Main menu */
+              .navbar-collapse {
+                ul#menu-main.nav {
+                  /*> li:first-of-type a {padding-left: 0px;}*/
+                  li {
+                    a {font-size: 16px; padding: 10px 9px;}
+                  }
+                }
+              }
+            }    
+
+        // Homepage
+            .homepage-top {padding-top: 45px; padding-bottom: 25px;
+            // Panel Top Left - Carousel
+            
+
+            
+            //Panel Top Right
+
+            #cluid-tenants { height: 240px;
+              a {color: @asparagus;
+                h2 {font-size: 30px; margin-top: 21px;}
+                > p {font-size: 19px;}
+                &:hover {
+                  & > p {}
+                }
+                span.green-arrow {}
+              }
+            }
+
+            #hp-property-count {height: 263px;
+              h2 {font-size: 85px;}
+              .hp-property-count-text { height: 86px;
+                p {font-size: 19px; width: 95%;}
+              }
+             a {
+              p {margin-top: 13px; margin-bottom: 0px;
+                span.white-arrow-3 {}
+              }
+             }
+              
+            }
+
+            
+
+          }
+
+          .homepage-bottom {
+            
+            a {}
+
+            //Panel Bottom Left
+            
+            #hp-our-people, #hp-advice-on-housing {
+              span {font-size: 22px;}
+              a {
+                &:hover {}
+              }
+              span.white-arrow {}
+              p.caption {font-size: 14px;
+                span.white-arrow {}
+                &:hover {
+                   span.white-arrow {}
+                }
+              }
+            }
+
+            .hp-news {
+              .hp-news-inner {height: 281px; margin-bottom: 5px;}
+              h3.hp-news-header {}
+              h4 {
+                .hp-news-title {}
+              }
+              a {
+                p {}
+                &:hover {}
+              }
+              .hp-news-date {}
+            }
+
+            .hp-case-studies {
+              h3 {font-size: 22px;}
+              .text-wrapper {height: 143px;}
+            }
+
+            .hp-thriving-com {
+              h3 {font-size: 22px;}
+              .text-wrapper {height: 120px;}
+            }
+
+            .hp-more {font-size: 17px;
+              &:hover {
+                p span.gray-arrow {}
+              }
+              p span.gray-arrow {}
+            }
+          }
+
+        // Cluid Tenants Section
+          
+
+          .cluid-tenants-menu {
+
+            #menu-tenants-menu {
+                    
+              > li {
+                &:nth-of-type(1) {padding-right: 3%}
+                &:nth-of-type(2) {padding-right: 2%}
+                &:nth-of-type(3) {padding-right: 2%}
+                &:nth-of-type(4) {padding-right: 2%}
+                > a {
+                  span { }
+                  b.caret {}
+                  &:hover {
+                    span { }
+                  }
+                }
+                ul.dropdown-menu {
+                  li {
+                    a {
+                      &:hover {}
+                    }
+                  }
+                }
+              }
+            }
+
+          }
+
+        // Cluid Tenants landing page
+        
+
+          .container-fluid {
+            .cluid-tenants-header {
+              .container {}
+              .header-img {
+                img {}
+              }
+              .header-content {font-size: 24px; width: 58%; padding-top: 50px;}
+            }
+          }
+
+          .ct-panels-top {
+
+            .col-md-3 {}
+
+            .ct-order-repair, .ct-pay-rent, .ct-handbook, .ct-get-involved {}
+            .ct-order-repair, .ct-pay-rent, .ct-handbook {}
+
+            .ct-panel-title {
+              h3 {font-size: 20px;}
+            }
+            
+            .ct-panel-img {
+              img {}
+            }
+            
+            .ct-panel-text {}
+            
+            .ct-panel-link {
+              a {
+                p {}
+                &:hover {
+                  p {}
+                }
+              }
+            }
+          }
+
+          .ct-panels-bottom {
+            .ct_thriving {
+              h3 {font-size: 19px;}
+            }
+            .ct_case_study {
+              h3 {font-size: 19px}
+            }
+            
+            .ct-more {
+              h3 {
+                p {}
+              }
+              &:hover {
+                h3 {}
+                p span.ct-arrow {}
+              }
+              p span.ct-arrow {}
+            }
+
+            .ct_news {
+              .ct-news-inner {}
+              h3.ct-news-header {font-size: 23px;}
+              h4 {
+                .ct-news-title {font-size: 20px;}
+              }
+              a {
+                p {}
+                &:hover {}
+              }
+              .ct-news-date {}
+            }
+
+          }
+
+         // Our Board
+            .people-list {
+              .people-list-wrapper {height: 405px;}
+              .people-list-text {height: 385px;}
+            }
+
+        // Our People
+            .people-list.our-people {
+              .people-list-wrapper {height:295px;}
+              .people-list-text {height:275px;}
+            }
+
+    
+
+        // Footer
+            html footer {
+                                     
+              // Top menu
+              aside#nav_menu-3 {
+                .menu-footer-top-container {}
+                ul#menu-footer-top {
+                  li {width: 215px; 
+                    a {font-size: 15px;
+                      &:hover {}
+                    }
+                  }
+                }
+              }
+            }  
+   
+     
+} // End 1199px
+
+
+// Tablet (landscape) 
+@media (max-width: 1024px)  {
+
+        // Cluid Tenants landing page
+
+          .container-fluid {
+            .cluid-tenants-header {
+              .header-img {bottom: -1px;
+              }
+            }
+          }  
+
+} // end 1024
+
+
+@media (max-width: 991px) {
+        
+            body {background-color: @white; background-image: none;}
+
+            .container {padding-left: 15px; padding-right: 15px;}
+
+        // Header   
+            .navbar {
+
+              //logo
+              .navbar-header {margin-top: 5px;
+                .navbar-brand {width: 180px;} 
+              }
+              
+              /* Top Side Menu */
+              #top-side {margin-right: 0px;}
+
+              /* Main menu */
+              .navbar-collapse {
+                ul#menu-main.nav {margin-top: 3px; margin-left: -8px;
+                  /*li:first-of-type a {padding-left: 0px;}*/
+                }
+              }
+            }
+
+        
+        // Homepage
+
+            .col-left-narrow {padding-right: 8px;}
+            .col-right-narrow {padding-left: 8px;}
+
+            .homepage-top {padding-top: 45px; padding-bottom: 25px; padding-top: 10px;
+
+              // Panel Left
+              #myCarousel {
+                  .carousel-indicators li {/*margin-left: 8px; margin-right: 8px; width: 25px; height: 25px; border-radius: 15px;*/}
+                  img {width: 100%;}
+                }
+                  
+
+              #hp-our-people-tablet, #hp-advice-on-housing-tablet {margin-top: 15px; margin-bottom: 15px; height: 120px; padding: 10px;
+                > span {font-size: 17px; line-height: 21px;}
+                a {
+                  &:hover {}
+                }
+                span.white-arrow {}
+                p.caption {font-size: 14px; padding-left: 10px; font-size: 12px;
+                  span.white-arrow {width: 22px; height: 15px; float: right; background-position: 0px 4px; background-size: contain;}
+                  &:hover {
+                     span.white-arrow {width: 22px; height: 15px; float: right; background-position: 0px 4px; background-size: contain;}
+                  }
+                }
+              }
+
+              
+              //Panel Right
+
+              #cluid-tenants { height: 214px;
+                a {
+                  h2 {font-size: 28px; margin-top: 21px;}
+                  > p {padding-right: 15%; font-size: 18px;}
+                  &:hover {
+                    & > p {font-size: 18px;}
+                  }
+                  span.green-arrow {}
+                }
+              }
+
+              #hp-property-count {
+                .hp-slider-tablet {height: 240px;}
+                h2 {font-size: 80px; margin-bottom: 14px;}
+                .hp-property-count-text {height: 93px;
+                  p {font-size: 17px;}
+                }
+               a {
+                p {
+                  span.white-arrow-3 {}
+                }
+               }
+                
+              }
+
+
+              .hp-news {border: 0px; height: auto;
+                .hp-news-inner {/*height: 284px;*/ height: auto;}
+                h3.hp-news-header {font-size: 23px; margin-top: 22px;}
+                h4 {
+                  .hp-news-title {font-size: 20px;}
+                }
+                a {
+                  p {}
+                  &:hover {}
+                }
+                .hp-news-date {font-size: 16px;}
+              }
+
+              .hp-case-studies {border: 0px;
+
+                h3 {font-size: 21px;}
+                .text-wrapper {height: 128px;}
+              }
+
+              .hp-thriving-com { border: 0px;
+                h3 {font-size: 21px;}
+                .text-wrapper {height: 104px;}
+              }
+
+              .hp-more {font-size: 14px;
+                &:hover {
+                  p span.gray-arrow {}
+                }
+                p span.gray-arrow {width: 38px; background-size: contain;}
+              }
+            }
+        
+          // Cluid Tenants Section
+            
+            .cluid-tenants-menu {height: auto;
+
+              #menu-tenants-menu {
+                      
+
+                > li {padding: 0px; width: auto; float: none;
+                  &:nth-of-type(1) {padding-right: 0px}
+                  &:nth-of-type(2) {padding-right: 0px}
+                  &:nth-of-type(3) {padding-right: 0px}
+                  &:nth-of-type(4) {padding-right: 0px}
+                  > a {
+                    span { }
+                    &:hover {
+                      span {}
+                    }
+                  }
+                  ul.dropdown-menu {
+                    li {
+                      a {
+                        &:hover {}
+                      }
+                    }
+                  }
+                }
+              }
+
+            }
+
+            
+
+         // Cluid Tenants landing page
+
+          .container-fluid {
+            .cluid-tenants-header {
+              .container {}
+              .header-img {right: 0%;
+                img {}
+              }
+              .header-content {font-size: 21px; width: 49%; line-height: 30px;}
+            }
+          }  
+
+          .ct-panels-top {
+
+              .col-md-3 {padding-right: 10px;}
+
+              .ct-order-repair, .ct-pay-rent, .ct-handbook, .ct-get-involved {}
+              .ct-order-repair, .ct-pay-rent, .ct-handbook {}
+              .ct-pay-rent {border: 0px;}
+              .ct-panel-title {
+                h3 {font-size: 20px;}
+              }
+              
+              .ct-panel-img {
+                img {}
+              }
+              
+              .ct-panel-text {}
+              
+              .ct-panel-link {
+                a {
+                  p {}
+                  &:hover {
+                    p {}
+                  }
+                }
+              }
+            }
+
+            .ct-panels-bottom {background-color: transparent;
+            .ct_thriving {margin-bottom: 20px;
+              h3 {}
+            }
+            .ct_case_study {margin-bottom: 20px;
+              h3 {}
+            }
+            
+            .ct-more {
+              h3 {
+                p {}
+              }
+              &:hover {
+                h3 {}
+                p span.ct-arrow {}
+              }
+              p span.ct-arrow {}
+            }
+
+            .ct_news {padding-left: 0px; padding-right: 0px;
+              .ct-news-inner {}
+              h3.ct-news-header {}
+              h4 {
+                .ct-news-title {}
+              }
+              a {
+                p {}
+                &:hover {}
+              }
+              .ct-news-date {}
+            }
+
+          }
+
+        // Who we are / Our Board
+            .people-list {
+             
+              .people-list-wrapper {height: auto;
+                img {padding-bottom: 20px;}
+              }
+              .people-list-text {height: auto; border-bottom: 0px;}
+              hr.spacer {border-color: @grayLighter; margin-top: 10px; margin-bottom: 25px;}
+            } 
+
+        // Who we are / Our People
+            .people-list.our-people {height: auto;
+              
+              .people-list-wrapper {height: auto;}
+              .people-list-text {height: auto; }
+            }  
+
+        // What we do / Build
+          .page-id-167 {
+            .acf-map {margin-bottom: 40px;}
+          }
+          .build-cs-wrapper{
+            hr.bondi:first-of-type{display: none;}
+            .build_case_study {height: auto; padding-top: 0px;
+              .build-subtitle {height: auto;}
+              .text-wrapper {height: auto;}
+              .hp-more {margin-bottom: 15px; margin-top: 0px;}
+            }
+          }
+
+
+        // Footer
+            html footer {
+                                     
+              // Top menu
+              aside#nav_menu-3 {
+                .menu-footer-top-container {}
+                ul#menu-footer-top {
+                  li {width: 330px; 
+                    a {
+                      &:hover {}
+                    }
+                  }
+                }
+              }
+
+              // Bottom menu
+              .footer-bottom-menu-wrapper {width: 100%;}
+              aside#nav_menu-4 {float: none; text-align: center; margin-bottom: 20px;}
+
+              .copyright-wrappper {width: 100%;
+                #copyright {text-align: center;}
+              }
+
+            }
+
+        // Footer Menu for IE 9
+            html.lt-ie10 footer {
+              // Top menu
+              aside#nav_menu-3 {
+                ul#menu-footer-top {
+                  li {
+                    a {font-size: 11px;}
+                  }
+                }
+              }
+            }  
+             
+} // End 991px
+
+
+
+// Collapsed Width
+@media (min-width: 768px) and (max-width: 979px) {
+	  body {}
+        /* Keep menu on top on CollapseWidth */
+          .navbar-fixed-top, .navbar-fixed-bottom {position: fixed;}
+          .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {margin-left: 0px;margin-right:0px; }
+          .navbar {
+            .navbar-inner {padding-bottom:0;}
+            .nav {/* margin-right:0px; margin-top:10px; padding:0px 0 0px 15px;*/}
+                    }
+} // End Collapsed width
+
+@media (min-width: 768px) {
+  .dropdown:hover>.dropdown-menu {display: block;}
+}
+
+
+@media (max-width: 767px) {
+        
+          .homepage {padding-left: 25px; padding-right: 25px; background-color: @mercury;}
+
+
+        /* Keep menu on top on CollapseWidth */
+          .navbar-fixed-top, .navbar-fixed-bottom {position: fixed;}
+          .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {margin-left: 0px;margin-right:0px; }
+
+        // Header   
+            .navbar {
+
+              // Toggle button & logo
+              .container > .navbar-header {margin-left: 0px;}
+              .navbar-header {margin-top: 25px; margin-bottom: 25px;
+                button.navbar-toggle {
+                  span.icon-bar {width: 45px; height: 5px; margin-top: 6px; background-color: @bondiBlue;}
+                }
+              }
+
+              /* Top Side Menu */
+              #top-side {display: none;}
+        
+              /* Main menu */
+              .navbar-collapse {
+                ul#menu-main.nav {
+                  > li:first-of-type > a {}  
+                  > li {
+                     &#menu-item-218, &#menu-item-219 {display: block;}
+                  }
+                }
+              }
+
+              /* Main menu */
+              .container > .navbar-collapse {margin-left: -25px; margin-right: -25px;}
+              .navbar-collapse {background-color: @niagara; padding-left: 15px; float: none; max-height: none;
+                ul#menu-main.nav {margin-left: 40px; margin-right: 30px; margin-bottom: 0px;
+                  > li:first-of-type > a {}  
+                  > li {
+                    &:not(:last-of-type) {border-bottom: 1px solid rgba(240,240,240,0.45);}
+                    &:last-of-type a {padding-bottom: 0px;}
+                     &#menu-item-218, &#menu-item-219 {display: block;}
+                      a {background: transparent; color: @white; padding-left: 13px; width:75%;
+                        .span {float: left;}
+
+                      }  
+                  span.caret-wrapper {cursor: pointer;padding: 10px 9px;border-left:1px solid @downy; display: block;float: right;width: 100px;text-align: center; }
+                   .caret {display: block;margin-left:auto;margin-right: auto;  width: 20px;margin-top: 5px; color:@white;
+                          border-top: 15px solid; border-right: 15px solid transparent; border-left: 15px solid transparent;}                    
+                                     
+
+                  }
+                
+
+                  .dropdown-menu {background-color: transparent; border: none; border-bottom: 0px; padding-top: 0px; 
+                    > li {
+                      &:first-of-type a {padding-top: 15px;}
+                      &:last-of-type a {padding-bottom: 15px;}
+                      > a {padding-left: 30px; width: 100%;
+                        &:hover {box-shadow: none; color: @blueLagoon; background: none;
+                        span {}
+                        }
+                        span {border-bottom: 0px;}
+                      }
+                    }
+                  }
+                }
+              }
+
+            }
+
+          
+          // Pages
+              .main-menu-page-container {padding-bottom: 40px;}
+              .main-menu-page-content {font-size: 24px;}
+              h1.page-title {margin: 0px -25px 20px;}
+            
+         // Homepage
+             .homepage-top {padding-top: 40px;
+                // Panel Top Left - Carousel
+                #myCarousel {margin-bottom: 30px;
+                  .carousel-indicators li {}
+                  .carousel-control {top: 25%;}
+                }
+
+                            
+              //Panel Top Right
+
+              #cluid-tenants {height: auto; background-color: @white; padding: 10px 30px; margin-bottom: 30px;
+                a {
+                  h2 {}
+                  > p {}
+                  &:hover {
+                    & > p {}
+                  }
+                  span.green-arrow {}
+                }
+              }
+
+              #hp-property-count {height: 280px; overflow: hidden;
+                .hp-slider {height: 258px; overflow: hidden; padding-bottom: 20px;}
+                h2 {}
+                .hp-property-count-text {height: auto;
+                  p {}
+                }
+               a {
+                p {margin-top: 0px;
+                  span.white-arrow-3 {}
+                }
+               }
+                
+              }
+
+              
+
+            }
+
+            .homepage-bottom {padding-bottom: 40px;
+              
+              a {}
+
+              //Panel Bottom Left
+              
+              #hp-our-people, #hp-advice-on-housing { margin-bottom: 30px; padding: 15px 25px 60px; height: auto;
+                > span {font-size: 23px; padding-top: 4px;}
+                a {
+                  &:hover {}
+                }
+                span.white-arrow {}
+                p.caption { font-size: 16px; padding: 10px 20px 10px 25px;
+                  span.white-arrow {}
+                  &:hover {
+                     span.white-arrow {}
+                  }
+                }
+              }
+
+              .hp-news {background-color: @white; padding: 25px; border: 0px; height: auto; overflow: hidden;
+                .hp-news-inner {height: auto;
+                  > p {display: none;}
+                }
+                h3.hp-news-header {}
+                h4 {
+                  .hp-news-title {}
+                }
+                
+                a {
+                  p {padding-top: 0px;}
+                  &:hover {}
+                }
+                .hp-news-date {}
+              }
+
+              .hp-case-studies {background-color: @white; height: auto; margin-bottom: 30px; border-bottom: 0px;
+                h3 {margin-bottom: 25px;}
+                .text-wrapper {display: none;}
+              }
+
+              .hp-thriving-com {background-color: @white; height: auto; margin-bottom: 30px; border-bottom: 0px;
+                h3 {margin-bottom: 25px;}
+                .text-wrapper {display: none;}
+              }
+
+              .hp-more { font-size: 15px;
+                &:hover {
+                  p span.gray-arrow {}
+                }
+                p span.gray-arrow {}
+              }
+            }    
+
+         // Cluid Tenants landing page
+
+          .container-fluid {
+            .breadcrumbs {padding: 15px 0px;}
+            .cluid-tenants-header {height: auto;
+              .container {}
+              .header-img {display: none;
+                img {}
+              }
+              .header-content {font-size: 21px; width: 100%; padding-top: 30px; padding-bottom: 10px;}
+            }
+          }  
+
+         
+          .ct-panels-top {
+
+              .col-md-3 {}
+
+              .ct-order-repair, .ct-pay-rent, .ct-handbook, .ct-get-involved {}
+              .ct-order-repair, .ct-pay-rent, .ct-handbook {}
+              .ct-pay-rent {}
+              .ct-panel-title {
+                h3 {font-size: 19px;}
+              }
+              
+              .ct-panel-img {
+                img {}
+              }
+              
+              .ct-panel-text {}
+              
+              .ct-panel-link {
+                a {
+                  p {}
+                  &:hover {
+                    p {}
+                  }
+                }
+              }
+            }
+
+            .ct-panels-bottom {
+              .ct_thriving {
+                h3 {}
+              }
+              .ct_case_study {
+                h3 {}
+              }
+              
+              .ct-more {
+                h3 {
+                  p {}
+                }
+                &:hover {
+                  h3 {}
+                  p span.ct-arrow {display: block; float: none;}
+                }
+                p span.ct-arrow {display: block; float: none;}
+              }
+
+              .ct_news {
+                .ct-news-inner {}
+                h3.ct-news-header {padding-top: 15px;}
+                h4 {
+                  .ct-news-title {}
+                }
+                a {
+                  p {}
+                  &:hover {}
+                }
+                .ct-news-date {}
+              }
+
+            }
+
+        // Footer
+            html footer {
+                                     
+              // Top menu
+              aside#nav_menu-3 {
+                .menu-footer-top-container {}
+                ul#menu-footer-top { /*-webkit-justify-content: space-around; justify-content: space-around;*/ display: block;
+
+                  li {width: 80%; display: block; margin: 0 auto;
+                    a {
+                      &:hover {}
+                    }
+                  }
+                }
+              }
+
+            }
+
+        // Footer Menu for IE 9
+            html.lt-ie10 footer {
+              // Top menu
+              aside#nav_menu-3 {
+                ul#menu-footer-top {padding-left: 10%; padding-right: 10%;
+                  li {width: 100%;
+                    a {font-size: 13px;}
+                  }
+                }
+              }
+            }  
+
+
+} // end 767px
+
+	// 480px
+@media (max-width: 480px) {
+        /* Keep menu on top on CollapseWidth */
+          .navbar-fixed-top, .navbar-fixed-bottom {position: fixed;}
+          .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {margin-left: 0px;margin-right:0px; }
+	     
+        // Header
+          .navbar {background-color: @white; /*border-bottom: 2px solid @grayLighter;*/ margin-bottom: 0px;
+            //logo
+            .navbar-header {margin: 12px 0px;
+              .navbar-brand {background: @logomobile; width: 170px; height: 48px;margin:5px 0px;} 
+              button.navbar-toggle {margin-top: 0px; margin-right: 0px; padding-right: 0px;}
+            }
+              /* Main menu */
+          .navbar-collapse{
+            ul#menu-main.nav {
+                  > li {
+                      a {}  
+                  span.caret-wrapper {width: 20%;text-align: center; }
+                          }
+                      }}
+          }
+
+        // Pages
+            .main-menu-page-container {}
+            .main-menu-page-content {font-size: 20px;}
+        
+        // Sidebars
+
+          .submenu-list-wwww  {
+            li {
+              a {font-size: 20px;}
+            }
+          }
+
+        // Homepage
+          
+          .homepage-top {
+
+            #myCarousel {
+             .carousel-indicators li {}
+             .carousel-control {top: 17%;}
+            }  
+
+            
+            #hp-property-count {
+              .hp-slider {height: 258px;}
+              h2 {font-size: 77px;}
+              .hp-property-count-text {height: 115px;}
+            }
+   
+          }
+
+
+          .homepage-bottom{
+
+            .hp-case-studies {
+              .col-left-narrow {width: 100%; padding-right: 15px;}
+              h3 {}
+              .text-wrapper {}
+            }
+
+            .hp-thriving-com {
+              h3 {}
+              .text-wrapper {}
+            }
+
+            .hp-more {
+              &:hover {
+                p span.gray-arrow {}
+              }
+              p span.gray-arrow {}
+            }
+   
+          }
+
+        // Cluid Tenants landing page
+
+          .container-fluid {
+            .cluid-tenants-header {height: auto;
+              .header-content {font-size: 21px; width: 100%; padding-top: 20px; padding-bottom: 0px;}
+            }
+          } 
+
+         .ct-panels-top {
+
+            .col-md-3 {width: 100%;}
+
+            .ct-order-repair, .ct-pay-rent, .ct-handbook, .ct-get-involved {border-right: none; margin-bottom: 10px;}
+            .ct-order-repair, .ct-pay-rent, .ct-handbook {}
+            .ct-get-involved {
+              .ct-panel-link {/*border-bottom: 0px;*/}
+            }
+            
+            .ct-panel-title {text-align: left;
+              h3 {font-size: 19px;}
+            }
+            
+            .ct-panel-img {display: none;
+              img {}
+            }
+            
+            .ct-panel-text {margin-bottom: 10px; height: auto;}
+            
+            .ct-panel-link {border-bottom: 1px solid @doveGray; padding-bottom: 10px; text-align: left;
+              a {
+                p {}
+                &:hover {
+                  p {}
+                }
+              }
+            }
+          } 
+
+          .ct-panels-bottom {
+            .ct_thriving {
+              h3 {}
+            }
+            .ct_case_study {
+              h3 {}
+            }
+            
+            .ct-more {
+              h3 {
+                p {}
+              }
+              &:hover {
+                h3 {}
+                p span.ct-arrow {}
+              }
+              p span.ct-arrow {}
+            }
+
+            .ct_news {
+              .ct-news-inner {}
+              h3.ct-news-header {padding-top: 5px;}
+              h4 {
+                .ct-news-title {}
+              }
+              a {
+                p {}
+                &:hover {}
+              }
+              .ct-news-date {}
+            }
+
+          }
+
+        // Footer
+          html footer {
+
+              // Top menu
+              aside#nav_menu-3 {
+                .menu-footer-top-container {}
+                ul#menu-footer-top {
+
+                  li { 
+                    a { font-size: 15px;
+                      &:hover {}
+                    }
+                  }
+                }
+              }
+            
+            // Bottom menu
+            .footer-bottom-menu-wrapper {}
+            aside#nav_menu-4 {
+              ul#menu-footer-bottom {
+                li {
+                  &:not(:first-of-type) a {padding-left: 10px;}
+                  a {font-size: 11px;}
+                }
+              }
+            }
+
+            // Copyright
+            .copyright-wrappper {
+              #copyright {font-size: 11px;}
+            }
+          }
+        
+
+} // end 480px
+
+
+  // 350px
+@media (max-width: 360px) {
+
+        // Header
+          .navbar {
+            .navbar-collapse {
+              ul#menu-main.nav > li a {font-size: 15px;}
+            }
+          }
+
+        // Homepage
+          
+          .homepage-top {
+
+            // Panel Top Left - Carousel
+            #myCarousel {
+             .carousel-control {top: 5%;}
+            } 
+
+            #cluid-tenants a {
+              > p {font-size: 14px; padding-right: 0px;}
+              h2 {font-size: 19px;}
+              &:hover {
+                > p {font-size: 14px;  padding-right: 0px;}
+              }
+            }
+
+            #hp-property-count {
+              h2 {font-size: 73px;}
+              .hp-property-count-text {
+                p {font-size: 16px;}
+              }
+             a {
+              p {
+                span.white-arrow-3 {}
+              }
+             }
+              
+            }
+           
+          }
+
+          .homepage-bottom {
+             .hp-case-studies {
+                .col-xs-6 {width: 100%;}
+                h3 {margin-bottom: 15px; margin-top: 20px; padding-left: 25px;}
+                a p {padding-left: 25px;}
+                img {width: 100%;}
+             }
+             .hp-thriving-com {
+                .col-xs-6 {width: 100%;}
+                h3 {margin-bottom: 15px; margin-top: 20px; padding-left: 25px; font-size: 20px;}
+                a p {padding-left: 25px;}
+                img {width: 100%;}
+             }
+          }
+
+}  // end 350px
+
+  // Mixins
+  //----------------------------------------------------------
+
+        .bw-gradient(@color: @grayLighter, @start: 200, @stop: 255) {
+          background: @color;
+          background: -webkit-gradient(linear,
+                                       left bottom,
+                                       left top,
+                                       color-stop(0, rgb(@start,@start,@start)),
+                                       color-stop(1, rgb(@stop,@stop,@stop)));
+          background: -ms-linear-gradient(bottom,
+                                          rgb(@start,@start,@start) 0%,
+                                          rgb(@stop,@stop,@stop) 100%);
+          background: -moz-linear-gradient(center bottom,
+                                           rgb(@start,@start,@start) 0%,
+                                           rgb(@stop,@stop,@stop) 100%);
+          background: -o-linear-gradient(rgb(@stop,@stop,@stop),
+                                         rgb(@start,@start,@start));
+          filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",rgb(@stop,@stop,@stop),rgb(@start,@start,@start)));
+        }
+
+        .border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+          -webkit-border-top-right-radius: @topright;
+          -webkit-border-bottom-right-radius: @bottomright;
+          -webkit-border-bottom-left-radius: @bottomleft;
+          -webkit-border-top-left-radius: @topleft;
+          -moz-border-radius-topright: @topright;
+          -moz-border-radius-bottomright: @bottomright;
+          -moz-border-radius-bottomleft: @bottomleft;
+          -moz-border-radius-topleft: @topleft;
+          border-top-right-radius: @topright;
+          border-bottom-right-radius: @bottomright;
+          border-bottom-left-radius: @bottomleft;
+          border-top-left-radius: @topleft;
+        }
+
+        .box-shadow(@arguments) {
+          -webkit-box-shadow: @arguments;
+          -moz-box-shadow: @arguments;
+          box-shadow: @arguments;
+        }
+
+
+// Font types
+
+
+@font-face {
+    font-family: 'nunitoregular';
+    src: url('fonts/nunito/nunito-regular-webfont.eot');
+    src: url('fonts/nunito/nunito-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/nunito/nunito-regular-webfont.woff') format('woff'),
+         url('fonts/nunito/nunito-regular-webfont.ttf') format('truetype'),
+         url('fonts/nunito/nunito-regular-webfont.svg#nunitoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nunitobold';
+    src: url('fonts/nunito/nunito-bold-webfont.eot');
+    src: url('fonts/nunito/nunito-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/nunito/nunito-bold-webfont.woff') format('woff'),
+         url('fonts/nunito/nunito-bold-webfont.ttf') format('truetype'),
+         url('fonts/nunito/nunito-bold-webfont.svg#nunitobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nunitolight';
+    src: url('fonts/nunito/nunito-light-webfont.eot');
+    src: url('fonts/nunito/nunito-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/nunito/nunito-light-webfont.woff') format('woff'),
+         url('fonts/nunito/nunito-light-webfont.ttf') format('truetype'),
+         url('fonts/nunito/nunito-light-webfont.svg#nunitolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('fonts/montserrat/montserrat-regular-webfont.eot');
+    src: url('fonts/montserrat/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/montserrat/montserrat-regular-webfont.woff') format('woff'),
+         url('fonts/montserrat/montserrat-regular-webfont.ttf') format('truetype'),
+         url('fonts/montserrat/montserrat-regular-webfont.svg#montserratregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
